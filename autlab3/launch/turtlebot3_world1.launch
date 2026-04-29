@@ -3,7 +3,7 @@
 
   <!-- Arguments -->
   <arg name="use_sim_time" default="true"/>
-  <arg name="x_pose" default="0.0"/>
+  <arg name="x_pose" default="-0.7"/>
   <arg name="y_pose" default="0.0"/>
 
   <!-- World file -->
@@ -28,4 +28,6 @@
     <arg name="y_pose" value="$(var y_pose)"/>
   </include>
 
+  <node pkg="gazebo_ros" exec="spawn_entity.py" args="-entity coke_can1 -database coke_can -x 0.0 -y 0.0 -z 0.0"/>
+  
 </launch>
