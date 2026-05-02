@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <launch>
 
+  <arg name="model_path" default="$(find-pkg-share autlab3)/models/marble_8cm/model.sdf"/>
   <arg name="model" default="$(find-pkg-share merakm)/urdf/diff_robot.urdf" />
   
   <include file="$(find-pkg-share gazebo_ros)/launch/gazebo.launch.py">
