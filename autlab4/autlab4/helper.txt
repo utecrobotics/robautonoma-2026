@@ -1,0 +1,17 @@
+def ros2pcl(ros_pcloud2):
+    """ 
+    Convertir un mensaje PointCloud2 en un tipo PCL PointXYZRGB
+
+        Argumentos
+            ros_pcloud2 - Mensaje de tipo PointCloud2
+
+        Retorna
+            pcl.PointCloud_PointXYZRGB - Nube de puntos XYZRGB de PCL
+    """
+    points_list = []
+    for data in pc2.read_points(ros_pcloud2, skip_nans=True):
+        points_list.append([data[0], data[1], data[2], data[3]])
+    pcl_data = pcl.PointCloud_PointXYZRGB()
+    pcl_data.from_list(points_list)
+    return pcl_data
+
